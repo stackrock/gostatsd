@@ -1,7 +1,5 @@
-FROM golang:1.15 AS builder
-
-ARG ARCH="amd64"
-ENV GOARCH="${ARCH}"
+ARG TARGET="amd64"
+FROM ${TARGET}/golang:1.15 AS builder
 
 WORKDIR /app
 COPY . /app/
